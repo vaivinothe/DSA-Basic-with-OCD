@@ -23,15 +23,17 @@
 
 
 Q 2.
-https://www.geeksforgeeks.org/problems/count-palindrome-sub-strings-of-a-string0652/1 
-        # Check for odd-length palindromes
+https://www.geeksforgeeks.org/problems/count-palindrome-sub-strings-of-a-string0652/1    
+    def countPS(self, s):
+        # code here
+        n = len(s)
+        count = 0
         for i in range(n):
             for j in range(1, min(i + 1, n - i)):
                 if s[i - j] == s[i + j]:
                     count += 1
                 else:
                     break
-        # Check for even-length palindromes
         for i in range(n - 1):
             for j in range(1, min(i + 2, n - i)):
                 if s[i - j + 1] == s[i + j]:
