@@ -57,3 +57,34 @@ public:
          
     }
 };
+
+// and problem solution with TLE -
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout << "enter size of array";
+    cin >> n;
+    int prices[n];
+    int k;
+    // cout << min;
+    int max = -10000;
+    for (int i = 0; i < n; i++)
+    {   cout << "enter "<< i << "element :";
+        cin >> prices[i];
+    }
+    for (int i = 0; i < n-1; i++)
+    {
+        for (int j = i+1; j < n; j++)
+        {
+           if ((prices[j] - prices[i] > max ) && (prices[j] - prices[i] >= 0 ))
+           {
+            max = prices[j] - prices[i];
+           }
+            
+        }
+        
+    }
+    cout<<max;
+}
