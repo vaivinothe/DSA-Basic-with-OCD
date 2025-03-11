@@ -29,3 +29,31 @@ public:
     }           
             
 };
+Q-2: https://leetcode.com/problems/next-permutation/description/
+
+
+
+
+
+Q.3  https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/ 
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+       #include<iostream>
+        #include<limits>
+        using namespace std;
+            // int n = prices.size();
+             int minPrice = INT_MAX;  
+             int maxProfit = 0;      
+        
+      
+          for (int price : prices) {
+            minPrice = min(minPrice, price);  
+            maxProfit = max(maxProfit, price - minPrice);  
+        
+    }
+ 
+    return{maxProfit} ;      
+         
+    }
+};
