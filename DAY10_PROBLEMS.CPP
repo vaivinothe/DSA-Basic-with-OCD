@@ -29,9 +29,65 @@ public:
     }           
             
 };
+// SC : O(n)
+// TC :O(n)
+
 Q-2: https://leetcode.com/problems/next-permutation/description/
 
-
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        #include<iostream>
+        #include<limits>
+        #include<algorithm>
+        #include <iterator> 
+        using namespace std;
+        
+            int n = nums.size();
+            int max = INT8_MAX;
+            int index_second = 0;
+            int count = 0;
+            int first_index = 0;
+            int q = 0;
+            for (int i = n-1 , j = n-2; i >=1 && j >=0; i--,j--)
+            {
+                if (nums[i] - nums[j] > 0)
+                {
+                first_index = j;
+                q = nums[j]; 
+                count++;
+                }
+            if (count >0)
+            {
+                break;
+            } 
+            }
+        if(count>0)
+            { for (int i = first_index +1; i < n; i++)
+                {
+                    if (nums[i] > q && nums[i] <= max)
+                    {
+                    max = nums[i]; 
+                    index_second = i;
+                    }
+                }
+                swap(nums[first_index], nums[index_second]);
+                for (int j = first_index+1 ; j < n; j++)
+                {
+                    if(j != n-1){
+                         reverse(begin(nums) + (first_index +1), begin(nums) + n);
+                         break;
+                        }
+                    }
+            }
+            else
+            {
+                reverse(nums.begin(), nums.begin()+ n);
+            }
+    }
+};
+//  SC : O(1)
+//  TC : O(n)
 
 
 
@@ -57,6 +113,8 @@ public:
          
     }
 };
+// SC : O(1)
+// TC : O(n)
 
 // and problem solution with TLE -
 
