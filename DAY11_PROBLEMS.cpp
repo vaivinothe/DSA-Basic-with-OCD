@@ -22,3 +22,5 @@ public:
         return nums;
     }
 };
+Q-2: https://leetcode.com/problems/rotate-image/description/
+
