@@ -15,7 +15,59 @@ public:
         return -1 ;
     }
 };
+// TC : O(n)
+// SC : O(1)
+
 Q-2.https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        #include<iostream>
+        #include<vector>
+        #include<algorithm>
+        using namespace std;   
+        // int target ;
+        // cout << "enter :";
+        // cin >> target;
+        int k =0;
+        vector<int>nums1;
+        int n = nums.size();
+        bool ram = true;
+        // vector<int>nums;
+        // for (int i = 0; i < size; i++)
+        // {
+        //     cin >> nums[i];
+        // }
+        for (int i = 0; i < n; i++)
+        {
+            if (target == nums[i]  )
+            {
+                nums1.push_back(i);
+                k =i;
+                break;
+                
+            }  
+           
+        }
+        for (int i = n-1; i > k; i--)
+        {
+            if (target == nums[i] )
+            {
+                nums1.push_back(i);
+                break;
+            }  
+           
+        }
+            if(nums1.size() == 1){
+                nums1.push_back(k);
+
+            }
+    if(nums1.size() > 0)return {nums1};
+    else return{-1,-1};
+    }
+};
+// TC : OC(n)
+// SC : O(1)
 
 
 
@@ -71,4 +123,6 @@ public:
             }
         return result ;
     }
-};
+}; 
+// OC : O(n)
+// TC : O(1)
